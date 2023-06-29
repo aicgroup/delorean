@@ -444,7 +444,7 @@ const moveProjectFiles = function () {
         if (fs.pathExistsSync(origin)) {
             log(chalk.yellow(`...copying source: ${origin}`));
             fs.removeSync(`${target}`);
-            fs.copySync(`${origin}`, `${target}`);
+            fs.copySync(`${origin}`, `${target}`,{dereference: true});
         }
     });
 };
